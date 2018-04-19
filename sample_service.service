@@ -1,0 +1,14 @@
+[Unit]
+Description=Sample Service
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/sample_service/sample.pid
+User=root
+ExecStart=/opt/sample_script/systemd_example.sh start
+ExecStop=/opt/sample_script/systemd_example.sh stop
+ExecReload=/opt/sample_script/systemd_example.sh  restart
+
+[Install]
+WantedBy=multi-user.target
