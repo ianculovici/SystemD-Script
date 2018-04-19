@@ -6,3 +6,6 @@ node_modules
 # Generated files
 .psci
 output
+
+.gitattributes
+.gitignore
