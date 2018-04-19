@@ -18,11 +18,14 @@ Once confirming that these commands work, the service can be implemented. The se
 
 Once this file is created, the only thing left is to enable the service (make it automatically start on reboot) and start/stop as a service using the SystemD command.
 ```
-systemctl enable sample_service```
+systemctl enable sample_service
 ```
-systemctl start sample_service```
 ```
-systemctl stop sample_service```
+systemctl start sample_service
+```
+```
+systemctl stop sample_service
+```
 
 
 See more details at https://dataandtechnology.wordpress.com/2018/03/01/systemd-service-and-script-example/.
