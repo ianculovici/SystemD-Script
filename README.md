@@ -7,13 +7,17 @@ The script calls another script called ```sample_service.sh```, which can be any
 
 This can be tested by running commands like:
 ```
-systemd_example.sh start```
+systemd_example.sh start
 ```
-systemd_example.sh status```
 ```
-systemd_example.sh stop```
+systemd_example.sh status
 ```
-systemd_example.sh restart```
+```
+systemd_example.sh stop
+```
+```
+systemd_example.sh restart
+```
 Once confirming that these commands work, the service can be implemented. The service file needs to be created as ```/etc/systemd/system/sample_service.service```.
 
 Once this file is created, the only thing left is to enable the service (make it automatically start on reboot) and start/stop as a service using the SystemD command.
