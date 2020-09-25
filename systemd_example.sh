@@ -2,7 +2,7 @@
 
 # This service only runs as root
 [ "$(id -u)" = 0 ] && {
-    PreCmd="/bin/su - ${USER} -c"
+    PreCmd="runuser ${USER} -c"
 } || {
       echo $0 must run as root.
     exit 1
