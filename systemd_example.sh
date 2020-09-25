@@ -1,13 +1,5 @@
 #!/bin/sh
 
-# This service only runs as root
-[ "$(id -u)" = 0 ] && {
-    PreCmd="runuser ${USER} -c"
-} || {
-      echo $0 must run as root.
-    exit 1
-}
-
 # CMD is the actual command that runs the service (e.g. httpd)
 
 SERVICE_DIR=/opt/sample_script
@@ -19,6 +11,14 @@ LOGFILE=/var/logs/sample_service.log
 LOGFILEDATE=`date '+%F:%T'`
 USER=sample_user
 USAGE_TEXT="Usage: $0 start|stop|restart|status"
+
+# This service only runs as root
+[ "$(id -u)" = 0 ] && {
+    PreCmd="runuser ${USER} -c"
+} || {
+      echo $0 must run as root.
+    exit 1
+}
 
 start_service () {
       if [ ! -f $PID_FILE ]; then
